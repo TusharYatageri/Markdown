@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Markdown Live Preview</title>
+  <style>
+    body {
+      background: #121212;
+      color: white;
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    h2 {
+      color: #fff;
+    }
+    .container {
+      display: flex;
+      gap: 20px;
+    }
+    textarea {
+      width: 50%;
+      height: 300px;
+      background: #2d2d2d;
+      color: #fff;
+      padding: 10px;
+      font-family: monospace;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+    }
+    .preview {
+      width: 50%;
+      height: 300px;
+      padding: 10px;
+      background: #1e1e1e;
+      border: 1px solid #ccc;
+      overflow-y: auto;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>MARKDOWN CODE RUNNER</h2>
+  <h4>By Tushar Yatageri</h4>
+  <p>Type Markdown on the left. Preview appears on the right.</p>
+
+  <div class="container">
+    <!-- Markdown Input -->
+    <textarea id="markdown-input">
+Your code goes here!
+    </textarea>
+
+    <!-- Rendered Preview -->
+    <div class="preview" id="markdown-preview"></div>
+  </div>
+
+  <!-- ✅ Add marked.js CDN here -->
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+  <!-- ✅ JavaScript for Live Markdown Rendering -->
+  <script>
+    const input = document.getElementById("markdown-input");
+    const preview = document.getElementById("markdown-preview");
+
+    function updatePreview() {
+      preview.innerHTML = marked.parse(input.value);
+    }
+
+    input.addEventListener("input", updatePreview);
+    updatePreview(); // Initial load
+  </script>
+
+</body>
+</html>
