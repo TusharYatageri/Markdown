@@ -14,12 +14,15 @@
     h2 {
       color: #fff;
     }
+    .container h4{
+      text-align: center;
+    }
     .container {
       display: flex;
-      gap: 20px;
+      gap: 50px;
     }
     textarea {
-      width: 50%;
+      width: 100%;
       height: 300px;
       background: #2d2d2d;
       color: #fff;
@@ -29,7 +32,7 @@
       border-radius: 10px;
     }
     .preview {
-      width: 50%;
+      width: 100%;
       height: 300px;
       padding: 10px;
       background: #1e1e1e;
@@ -43,16 +46,22 @@
 
   <h2>MARKDOWN CODE RUNNER</h2>
   <h4>By Tushar Yatageri</h4>
-  <p>Type Markdown on the left. Preview appears on the right.</p>
+  <p>Type Markdown on the left and preview appears on the right.</p>
 
   <div class="container">
     <!-- Markdown Input -->
-    <textarea id="markdown-input">
-Your code goes here!
-    </textarea>
-
+    <div style="width: 50%;">
+      <h4>MARKDOWN TEXT</h4>
+      <textarea id="markdown-input">Your code goes here!</textarea>
+    </div>
+  
     <!-- Rendered Preview -->
-    <div class="preview" id="markdown-preview"></div>
+    <div style="width: 50%;">
+      <h4>PREVIEW</h4>
+      <div class="preview">
+        <div id="markdown-preview"></div>
+      </div>
+    </div>
   </div>
 
   <!-- ✅ Add marked.js CDN here -->
